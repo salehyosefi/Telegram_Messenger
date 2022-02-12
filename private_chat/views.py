@@ -43,7 +43,7 @@ class EditData(APIView):
 class SearchData(APIView):
     def get(self, request):
         search = request.GET['name']
-        query = Detail.objects.filter(store_name__contains= search)
+        query = Detail.objects.filter(name__contains= search)
         serializer = DetailModelSerializer(query, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
