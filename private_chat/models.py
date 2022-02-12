@@ -5,7 +5,7 @@ class Detail(models.Model):
     name = models.CharField(max_length=40)
     lastMessage = models.CharField(max_length=50)
     unreadMessagesCount = models.IntegerField(blank=True)
-    image = models.ImageField(default='', upload_to='user_image/', null=True, blank=True)
+    image = models.ImageField(default='user_image/default_profile.png', upload_to='user_image/', null=True, blank=True)
     date = models.DateTimeField(default=datetime.now)
     pin = models.BooleanField(default=False)
     mute = models.BooleanField(default=False)
